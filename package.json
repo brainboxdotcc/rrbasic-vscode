@@ -1,10 +1,10 @@
 {
-    "name": "qb64",
-    "displayName": "QB64",
-    "description": "QB64 - QBasic language support & compiler",
+    "name": "rrbasic",
+    "displayName": "Retro Rocket BASIC",
+    "description": "Retro Rocket Basic language support",
     "version": "0.0.1",
     "author": {
-        "name": "QB64 Community"
+        "name": "Brainbox.cc"
     },
     "engines": {
         "vscode": "^1.30.0"
@@ -31,30 +31,27 @@
     "contributes": {
         "languages": [
             {
-                "id": "qbasic",
+                "id": "rrbasic",
                 "aliases": [
-                    "QB64",
-                    "qbasic",
+                    "retro-rocket-basic",
                     "basic"
                 ],
                 "extensions": [
-                    ".bas",
-                    ".qb",
-                    ".qbasic"
+                    ".rrbasic"
                 ],
                 "configuration": "./language-configuration.json"
             }
         ],
         "grammars": [
             {
-                "language": "qbasic",
-                "scopeName": "source.qbasic",
-                "path": "./syntaxes/qbasic.tmLanguage.json"
+                "language": "rrbasic",
+                "scopeName": "source.rrbasic",
+                "path": "./syntaxes/rrbasic.tmLanguage.json"
             }
         ],
         "snippets": [
             {
-                "language": "qbasic",
+                "language": "rrbasic",
                 "path": "./snippets/snippets.json"
             }
         ],
@@ -66,16 +63,5 @@
         }
     },
     "debuggers": [
-        {
-          "type": "qb64",
-          "label": "qb64",
-          "enableBreakpointsFor": {
-            "languageIds": [
-              "qb64",
-              "qb",
-              "qbasic"
-            ]
-          }
-        }
     ]
 }

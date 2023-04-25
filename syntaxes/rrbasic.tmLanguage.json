@@ -1,0 +1,117 @@
+{
+	"scopeName": "source.rrbasic",
+	"uuid": "e7de52b7-8378-4396-848e-e9da04e24ddb",
+	"fileTypes": [
+		"rrbasic"
+	],
+	"name": "Retro Rocket BASIC",
+	"patterns": [
+		{
+			"captures": {
+				"1": {
+					"name": "punctuation.definition.comment.rrbasic"
+				}
+			},
+			"comment": "Comment",
+			"match": "(REM).*",
+			"name": "comment.line.rrbasic"
+		},
+		{
+			"comment": "Delimiter",
+			"match": "[,;]",
+			"name": "meta.delimiter.object.rrbasic"
+		},
+		{
+			"comment": "Keyword",
+			"match": "(?i)(\\b(BACKGROUND|CALL|CHAIN|CIRCLE|CLOSE|CLS|COLOR|COLOUR|CONNECT|CURSOR|DEF|DELETE|DIM|ELSE|END|EOF|EVAL|FOR|GCOL|GLOBAL|GOSUB|GOTO|IF|INPUT|LET|LINE|MKDIR|MOUNT|NEXT|OPENIN|OPENOUT|OPENUP|POINT|PRINT|PROC|READ|RECTANGLE|REDIM|REM|REPEAT|RETPROC|RETURN|RMDIR|SOCKCLOSE|SOCKREAD|SOCKWRITE|STEP|THEN|TO|TRIANGLE|UNTIL|WRITE|)\\b)",
+			"name": "keyword.control.rrbasic"
+		},
+		{
+			"comment": "Function",
+			"match": "(?i)(\\b(ABS|LEN|OPENIN|OPENOUT|OPENUP|EOF|READ|INSTR|ASC|GETNAMECOUNT|GETSIZE|GETPROCCOUNT|GETPROCID|GETPROCPARENT|GEPROCCPUID|RGB|TERMWIDTH|TERMHEIGHT|CURRENTX|CURRENTY|MEMFREE|MEMUSED|MEMORY|SIN|COS|TAN|POW|NETINFO$|DNS$|LEFT$|MID$|CHR$|READ$|GETNAME$|GETPROCNAME$|RAMDISK$|RAMDISK|INKEY$)\\b)",
+			"name": "support.function.rrbasic"
+		},
+		{
+			"comment": "Operator",
+			"match": "(?i)((\\+|=|<|>|AND|OR|\\*|/|%))",
+			"name": "keyword.operator.rrbasic"
+		},
+		{
+			"comment": "Numeric",
+			"match": "\\b(\\d(\\.\\d)?)+",
+			"name": "constant.numeric.rrbasic"
+		},
+		{
+			"comment": "Global",
+			"match": "\\b\\w+\\$",
+			"name": "constant.global.rrbasic"
+		},
+		{
+			"captures": {
+				"1": {
+					"name": "entity.name.function.rrbasic"
+				}
+			},
+			"comment": "PROC",
+			"match": "(?i)(^(DEF PROC\\w+))",
+			"name": "meta.function.rrbasic"
+		},
+		{
+			"comment": "Brace, round",
+			"match": "[\\(\\)]",
+			"name": "meta.brace.round.rrbasic"
+		},
+		{
+			"comment": "Brace, curly",
+			"match": "[\\{\\}]",
+			"name": "meta.brace.curly.rrbasic"
+		},
+		{
+			"begin": "(\\w+\\()",
+			"beginCaptures": {
+				"1": {
+					"name": "constant.array.rrbasic"
+				}
+			},
+			"comment": "Array",
+			"end": "(\\))",
+			"endCaptures": {
+				"1": {
+					"name": "constant.array.rrbasic"
+				}
+			},
+			"name": "other.array.rrbasic",
+			"patterns": [
+				{
+					"include": "$self"
+				}
+			]
+		},
+		{
+			"begin": "(\")",
+			"beginCaptures": {
+				"1": {
+					"name": "punctuation.definition.string.begin.rrbasic"
+				}
+			},
+			"comment": "String, double-quoted",
+			"end": "(\")",
+			"endCaptures": {
+				"1": {
+					"name": "punctuation.definition.string.begin.rrbasic"
+				}
+			},
+			"name": "string.quoted.double.rrbasic",
+			"patterns": [
+				{
+					"comment": "Single quote inside double-quoted string",
+					"match": "(')",
+					"name": "other.rrbasic"
+				},
+				{
+					"include": "$self"
+				}
+			]
+		}
+	]
+}
